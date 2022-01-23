@@ -39,5 +39,27 @@ namespace Webinar_Register.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ViewResult RegisterForm(WebinarRegisters guests)
+        {
+            if (ModelState.IsValid)
+            {
+                Repository.AddResponse(guests);
+
+
+                return View("ThankYou", guests);
+            }
+            else
+            {
+                return View();
+            }
+        }
+         
+        public ViewResult ListsGuests()
+        {
+            return View(Repository.Responses.Where(r => r.WillJoin == true) );
+        }
+
+
     }
 }

@@ -1,0 +1,19 @@
+﻿@model WebinarRegisters
+@{
+    ViewData["Title"] = "Thank You for Registering";
+}
+
+@if(Model.WillJoin == true)
+            {
+                <div class="text-center">
+                    <h1>Thank You for Joining the webinar</h1>
+                    Congratulations @Model.Name,
+                </div>
+
+            }
+            else
+            {
+                <h3>Sorry to hear you do not wish to join</h3>
+            }
+<div>Click <a asp-action="ListGuests">here</a> to view the list of registered guests</div>
+

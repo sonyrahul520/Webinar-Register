@@ -33,5 +33,11 @@ namespace Webinar_Register.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpGet]
+        public ViewResult RegisterForm()
+        {
+            return View();
+        }
     }
 }
